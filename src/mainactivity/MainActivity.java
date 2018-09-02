@@ -2,18 +2,21 @@
  * MainActivity 
  */
 package mainactivity;
-
+import java.util.Scanner;
+import emailclient.EmailClient;
+import java.io.*;
 /**
  *
  * @author Payton Parrott
  */
-public class MainActivity {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class MainActivity 
+{
+   public static EmailClient emailclient;
+   public static String[] messagebody;
+   
+    public static void main(String[] args) throws IOException 
+    {
+       emailclient.messageBody(messagebody);
+        
     }
-    
 }
