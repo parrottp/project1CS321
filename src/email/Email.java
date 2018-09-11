@@ -10,8 +10,10 @@ public class Email
     private String sender;
     private String messageBody;
     private String subject;
+    private String signature;
     private List<String> recipient;
     private List<String> carbonCopy;
+    private List<String> blindCarbonCopy;
     
    /**
     * Set sender equal to input parameters
@@ -65,6 +67,24 @@ public class Email
    }
    
    /**
+    * Sets carbonCopy equal to input parameters
+    * @param bcc 
+    */
+   public void setBCC(List<String> bcc)
+   {
+       blindCarbonCopy = bcc;
+   }
+   
+   /**
+    * @return carbonCopy
+    */
+   public List<String> getBCC()
+   {
+       return blindCarbonCopy;
+   }
+   
+   
+   /**
     * Set subject equals to input parameters
     * @param s 
     */
@@ -95,8 +115,26 @@ public class Email
        return messageBody;
    }
    
+    /**
+    * Sets messageBody equal to input parameters
+    * @param s
+    */
+   public void setSignature(String s)
+   {
+       signature = s;
+   }
+   
    /**
-    * Prints out parts of email object. Also prints out time stamp at the end
+    * @return messageBody
+    */
+   public String getSignature()
+   {
+       return signature;
+   }
+   
+   /**
+    * Prints out parts of email object. Also prints out time stamp at the end.
+    * The time stamps makes each email object unique.
     */
    public void printEmail()
    {
@@ -105,7 +143,6 @@ public class Email
        System.out.println("-----------------------------------------");
        System.out.println("[Sender]\n" + sender);
        System.out.println("-----------------------------------------");
-       
        System.out.println("[Recipients]");
        recipient.forEach((r) ->
         {
@@ -113,18 +150,23 @@ public class Email
         });
        System.out.println("-----------------------------------------");
        System.out.println("[CC]");
-       
        carbonCopy.forEach((c) ->
         {
             System.out.println(c);
         });
        System.out.println("-----------------------------------------");
+       System.out.println("[BCC]");
+       blindCarbonCopy.forEach((b) ->
+        {
+            System.out.println(b);
+        });
+       System.out.println("-----------------------------------------");
        System.out.println("[Subject]\n" + subject);
        System.out.println("-----------------------------------------");
        System.out.println("[Message Body]\n" + messageBody);
+       System.out.println(signature);
        System.out.println("-----------------------------------------");
        System.out.println("Date and Time: " + date.toString());
        System.out.println("-----------------------------------------");
-       
    }   
 }
