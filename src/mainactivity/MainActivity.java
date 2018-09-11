@@ -1,14 +1,14 @@
 /**
  * MainActivity 
+ * Project 1
+ * Payton Parrott
+ *
  */
 package mainactivity;
 import email.Email;
 import java.util.*;
 
-/**
- *
- * @author Payton Parrott
- */
+
 public class MainActivity 
 {
    private static List<String> carbonCopylist;

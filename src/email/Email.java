@@ -1,6 +1,5 @@
 /**
  * Email Class: Handles all of the parts of the email object
- * 
  */
 package email;
 import java.util.*;
@@ -88,6 +87,7 @@ public class Email
    {
        Date date = new Date();
        
+       System.out.println("-----------------------------------------");
        System.out.println("[Sender]\n" + sender);
        System.out.println("-----------------------------------------");
        
