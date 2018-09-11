@@ -86,18 +86,27 @@ public class Email
     */
    public void printEmail()
    {
-       System.out.println("Sender: " + sender);
+       Date date = new Date();
+       
+       System.out.println("[Sender]\n" + sender);
+       System.out.println("-----------------------------------------");
        
        System.out.println("[Recipients]");
-       for (String r : recipient)
-       {
-           System.out.println(r);
-       }
+       recipient.forEach((r) ->
+        {
+            System.out.println(r);
+        });
+       System.out.println("-----------------------------------------");
        System.out.println("[CC]");
-       for (String c: carbonCopy)
-       {
-           System.out.println(c);
-       }
+       
+       carbonCopy.forEach((c) ->
+        {
+            System.out.println(c);
+        });
+       System.out.println("-----------------------------------------");
        System.out.println("[Message Body]\n" + messageBody);
+       System.out.println("-----------------------------------------");
+       System.out.println("Date and Time: " + date.toString());
+       
    }   
 }
