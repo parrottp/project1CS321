@@ -14,6 +14,7 @@ public class Email
     private List<String> recipient;
     private List<String> carbonCopy;
     private List<String> blindCarbonCopy;
+    private Date date = new Date();
     
    /**
     * Set sender equal to input parameters
@@ -138,7 +139,6 @@ public class Email
     */
    public void printEmail()
    {
-       Date date = new Date();
        
        System.out.println("-----------------------------------------");
        System.out.println("[Sender]\n" + sender);
