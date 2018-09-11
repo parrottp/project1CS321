@@ -29,9 +29,38 @@ public class EmailClient
        recipient = r;
    }
    
-   public String ()
+   public String getRecipient()
    {
        return recipient;
+   }
+   
+   public void setCC(String cc)
+   {
+       carbonCopy = cc;
+   }
+   
+   public String getCC()
+   {
+       return carbonCopy;
+   }
+   
+   public void setMessageBody(String mb)
+   {
+       messageBody = mb;
+   }
+   
+   public String getMessageBody()
+   {
+       return messageBody;
+   }
+   
+   public void printEmail()
+   {
+       System.out.println("Sender: " + sender);
+       System.out.println("Recipient: " + recipient);
+       System.out.println("CC: " + carbonCopy);
+       System.out.println("\n");
+       System.out.println("Message Body: " + messageBody);
    }
    
    
