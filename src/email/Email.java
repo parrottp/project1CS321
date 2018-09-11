@@ -9,6 +9,7 @@ public class Email
 {
     private String sender;
     private String messageBody;
+    private String subject;
     private List<String> recipient;
     private List<String> carbonCopy;
     
@@ -64,6 +65,20 @@ public class Email
    }
    
    /**
+    * Set subject equals to input parameters
+    * @param s 
+    */
+   public void setSubject(String s)
+   {
+       subject = s;
+   }
+   
+   public String getSubject()
+   {
+       return subject;
+   }
+   
+   /**
     * Sets messageBody equal to input parameters
     * @param mb 
     */
@@ -81,7 +96,7 @@ public class Email
    }
    
    /**
-    * Prints out information for email object
+    * Prints out parts of email object. Also prints out time stamp at the end
     */
    public void printEmail()
    {
@@ -104,9 +119,12 @@ public class Email
             System.out.println(c);
         });
        System.out.println("-----------------------------------------");
+       System.out.println("[Subject]\n" + subject);
+       System.out.println("-----------------------------------------");
        System.out.println("[Message Body]\n" + messageBody);
        System.out.println("-----------------------------------------");
        System.out.println("Date and Time: " + date.toString());
+       System.out.println("-----------------------------------------");
        
    }   
 }

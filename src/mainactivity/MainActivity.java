@@ -15,6 +15,7 @@ public class MainActivity
    private static List<String> recipientList;
    private static String sender;
    private static String messageBody;
+   private static String subject;
    
     /**
      * MainActivity for Projet 1
@@ -29,13 +30,16 @@ public class MainActivity
        recipientList = Arrays.asList("parrott26@gmail.com", 
                "payton.r.parrott@saic.com", "generic@email.com");
        carbonCopylist = Arrays.asList("nbw0067@uah.edu","hello@uah.edu");
+       subject = "Testing Email Class";
        messageBody = "Hey Guys, \n" + "This is a test for the email class.\n" + 
                "Thanks,\n" + "Payton Parrott";
+     
    
        //Inputing data into email object
        email.setSender(sender);
        email.setRecipient(recipientList);
        email.setCC(carbonCopylist);
+       email.setSubject(subject);
        email.setMessageBody(messageBody);
        
        //printing email object
