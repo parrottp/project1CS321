@@ -36,12 +36,13 @@ public class MainActivity
        subject = "Testing Email Class";
        messageBody = "Hey Guys, \n"
                + "This is a test email object. This object includes\n"
-               + "a sender, recipients, carbon copy, blind carbon copy\n"
-               + "a subject, a message body, and a signature";
+               + "a sender, recipients, carbon copy list, blind carbon\n"
+               + "copy list a subject, a message body, and a signature.";
        signature = "Thanks,\n"
                + "Payton Parrott";
      
        //Inputing data into email object
+       email.timeStamp();
        email.setSender(sender);
        email.setRecipient(recipientList);
        email.setCC(carbonCopylist);

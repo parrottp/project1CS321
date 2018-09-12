@@ -14,7 +14,6 @@ public class Email
     private List<String> recipient;
     private List<String> carbonCopy;
     private List<String> blindCarbonCopy;
-    private Date date = new Date();
     
    /**
     * Set sender equal to input parameters
@@ -134,39 +133,48 @@ public class Email
    }
    
    /**
-    * Prints out parts of email object. Also prints out time stamp at the end.
-    * The time stamps makes each email object unique.
+    * Creates time stamp using Date object. This is used 
+    * as a unique identifier.
+    * @return timeStamp
+    */
+   public Date timeStamp()
+   {
+       Date timeStamp = new Date();
+       return timeStamp;
+   }
+   /**
+    * Prints out parts of email object. 
     */
    public void printEmail()
    {
        
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[Sender]\n" + sender);
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[Recipients]");
        recipient.forEach((r) ->
         {
             System.out.println(r);
         });
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[CC]");
        carbonCopy.forEach((c) ->
         {
             System.out.println(c);
         });
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[BCC]");
        blindCarbonCopy.forEach((b) ->
         {
             System.out.println(b);
         });
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[Subject]\n" + subject);
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
        System.out.println("[Message Body]\n" + messageBody);
        System.out.println(signature);
-       System.out.println("-----------------------------------------");
-       System.out.println("Date and Time: " + date.toString());
-       System.out.println("-----------------------------------------");
+       System.out.println("----------------------------------------------");
+       System.out.println("Date and Time: " + timeStamp().toString());
+       System.out.println("----------------------------------------------");
    }   
 }
