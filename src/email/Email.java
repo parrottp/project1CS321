@@ -142,6 +142,20 @@ public class Email
        Date timeStamp = new Date();
        return timeStamp;
    }
+   
+   public void createEmail(String send, List<String> recipientList, 
+           List<String> carbonCopyList, List<String> blindCarbon, 
+           String Subject, String message, String signature)
+   {
+       this.timeStamp();
+       this.setSender(send);
+       this.setRecipient(recipientList);
+       this.setCC(carbonCopyList);
+       this.setBCC(blindCarbon);
+       this.setSubject(Subject);
+       this.setMessageBody(message);
+       this.setSignature(signature);
+   }
    /**
     * Prints out parts of email object. 
     */

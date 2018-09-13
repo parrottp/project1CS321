@@ -42,14 +42,8 @@ public class MainActivity
                + "Payton Parrott";
      
        //Inputing data into email object
-       email.timeStamp();
-       email.setSender(sender);
-       email.setRecipient(recipientList);
-       email.setCC(carbonCopylist);
-       email.setBCC(blindCarbonCopy);
-       email.setSubject(subject);
-       email.setMessageBody(messageBody);
-       email.setSignature(signature);
+      email.createEmail(sender, recipientList, carbonCopylist, blindCarbonCopy, 
+              subject, messageBody, signature);
        
        //printing email object
        email.printEmail();
